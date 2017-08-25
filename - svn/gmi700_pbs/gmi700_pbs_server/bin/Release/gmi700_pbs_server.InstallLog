@@ -1,0 +1,115 @@
+﻿Installing assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Installing service Service1...
+Creating EventLog source Service1 in log Application...
+Rolling back assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Restoring event log to previous state for source Service1.
+Uninstalling assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Installing assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Uninstalling assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Installing assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Uninstalling assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Attempt to stop service Service1.
+Uninstalling assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Installing assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Uninstalling assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Installing assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Installing service Service1...
+Service Service1 has been successfully installed.
+Creating EventLog source Service1 in log Application...
+Committing assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Uninstalling assembly 'D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.InstallLog
+   assemblypath = D:\TSE Projects\fct_gmi700_pbs\gmi700_pbs\gmi700_pbs_server\bin\Release\gmi700_pbs_server.exe
+Removing EventLog source Service1.
+Service Service1 is being removed from the system...
+Service Service1 was successfully removed from the system.
+Attempt to stop service Service1.

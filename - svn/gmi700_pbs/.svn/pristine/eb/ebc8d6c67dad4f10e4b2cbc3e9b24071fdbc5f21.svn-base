@@ -1,0 +1,32 @@
+[FTP Server]
+ip=ftp://192.168.150.90
+dir=/
+username=laser
+password=VotanA-221
+
+
+[Local Path]
+DownloadFolder=E:\INST PANEL GMI700 17MY\Download
+BackupFolder=E:\INST PANEL GMI700 17MY\Backup
+DataFolder=E:\INST PANEL GMI700 17MY\Data
+
+[PLC]
+ReceiveTimeLimit = 1000
+RetryCount = 1
+
+[EXAMPLE]
+ip=ftp://localhost
+dir=/
+ip=ftp://192.168.1.2/BALL_TEST
+ip=ftp://localhost/BALL_TEST
+username=sa
+password=d4168f
+DownloadFolder=E:\FTP\Download
+BackupFolder=E:\FTP\Backup
+DataFolder=E:\FTP\Data
+DownloadFolder=C:\AnEasyBrowseDir\gmi700-pbs\Download
+BackupFolder=C:\AnEasyBrowseDir\gmi700-pbs\Backup
+DataFolder=C:\AnEasyBrowseDir\gmi700-pbs\Data
+DownloadFolder=E:\INST PANEL GMI700 17MY\Download
+BackupFolder=E:\INST PANEL GMI700 17MY\Backup
+DataFolder=E:\INST PANEL GMI700 17MY\Data

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+gmi700_pbs_client
+</name>
+</assembly>
+<members>
+<member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.PLC_MASTERDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.PROCESSDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.RESULTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.V_RESULT_HISTORYDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.PART_NO_MAPPINGDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.PLC_MASTERRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.PROCESSRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.RESULTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.V_RESULT_HISTORYRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.PART_NO_MAPPINGRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.PLC_MASTERRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.PROCESSRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.RESULTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.V_RESULT_HISTORYRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet.PART_NO_MAPPINGRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.PLC_MASTERTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.PROCESSTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.RESULTTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.V_RESULT_HISTORYTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.PART_NO_MAPPINGTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(gmi700_pbs_client.fct_gmi700_pbsDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(gmi700_pbs_client.fct_gmi700_pbsDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(gmi700_pbs_client.fct_gmi700_pbsDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.TableAdapterManager.UpdateAll(gmi700_pbs_client.fct_gmi700_pbsDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:gmi700_pbs_client.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:gmi700_pbs_client.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:gmi700_pbs_client.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

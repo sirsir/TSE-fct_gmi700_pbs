@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="988a8c303c5542be895745c1a44c7522" Name="Diagram1">
+        <EntityTypeShape EntityType="fct_gmi700_pbsModel.PLC_MASTER" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="fct_gmi700_pbsModel.PLC_MEMORY_MAP" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="fct_gmi700_pbsModel.PROCESS" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="fct_gmi700_pbsModel.RESULT" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="fct_gmi700_pbsModel.V_RESULT_HISTORY" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="fct_gmi700_pbsModel.FK_PLC_MASTER_PROCESS" ManuallyRouted="false" />
+        <AssociationConnector Association="fct_gmi700_pbsModel.FK_RESULT_PROCESS" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="fct_gmi700_pbsModel.PART_NO_MAPPING" Width="1.5" PointX="8.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

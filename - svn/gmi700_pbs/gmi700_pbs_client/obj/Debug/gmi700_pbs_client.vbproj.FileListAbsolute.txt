@@ -1,0 +1,12 @@
+D:\TSE Projects\fct_gmi700_pbs\- svn\gmi700_pbs\gmi700_pbs_client\bin\Debug\gmi700_pbs_client.exe.config
+D:\TSE Projects\fct_gmi700_pbs\- svn\gmi700_pbs\gmi700_pbs_client\bin\Debug\gmi700_pbs_client.exe
+D:\TSE Projects\fct_gmi700_pbs\- svn\gmi700_pbs\gmi700_pbs_client\bin\Debug\gmi700_pbs_client.pdb
+D:\TSE Projects\fct_gmi700_pbs\- svn\gmi700_pbs\gmi700_pbs_client\bin\Debug\gmi700_pbs_client.xml
+D:\TSE Projects\fct_gmi700_pbs\- svn\gmi700_pbs\gmi700_pbs_client\obj\Debug\gmi700_pbs_client.frmResultHistory.resources
+D:\TSE Projects\fct_gmi700_pbs\- svn\gmi700_pbs\gmi700_pbs_client\obj\Debug\gmi700_pbs_client.Resources.resources
+D:\TSE Projects\fct_gmi700_pbs\- svn\gmi700_pbs\gmi700_pbs_client\obj\Debug\gmi700_pbs_client.vbproj.GenerateResource.Cache
+D:\TSE Projects\fct_gmi700_pbs\- svn\gmi700_pbs\gmi700_pbs_client\obj\Debug\gmi700_pbs_client.exe
+D:\TSE Projects\fct_gmi700_pbs\- svn\gmi700_pbs\gmi700_pbs_client\obj\Debug\gmi700_pbs_client.xml
+D:\TSE Projects\fct_gmi700_pbs\- svn\gmi700_pbs\gmi700_pbs_client\obj\Debug\gmi700_pbs_client.pdb
+D:\TSE Projects\fct_gmi700_pbs\- svn\gmi700_pbs\gmi700_pbs_client\obj\Debug\gmi700_pbs_client.vbprojResolveAssemblyReference.cache
+D:\TSE Projects\fct_gmi700_pbs\- svn\gmi700_pbs\gmi700_pbs_client\bin\Debug\ReadMe.txt

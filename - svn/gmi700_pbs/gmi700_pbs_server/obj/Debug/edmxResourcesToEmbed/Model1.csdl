@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fct_gmi700_pbsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PLC_MASTER">
+    <Key>
+      <PropertyRef Name="PLC_ID" />
+    </Key>
+    <Property Name="PLC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PLC_DESCR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PROCESS_ID" Type="Int32" Nullable="false" />
+    <Property Name="PLC_NET" Type="Int32" Nullable="false" />
+    <Property Name="PLC_NODE" Type="Int32" Nullable="false" />
+    <Property Name="PLC_UNIT" Type="Int32" Nullable="false" />
+    <Property Name="PC_WRITE_ADDRESS" Type="Int32" Nullable="false" />
+    <Property Name="PLC_WRITE_ADDRESS" Type="Int32" Nullable="false" />
+    <Property Name="INCOMING_FLAG" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="PROCESS" Relationship="Self.FK_PLC_MASTER_PROCESS" FromRole="PLC_MASTER" ToRole="PROCESS" />
+  </EntityType>
+  <EntityType Name="PLC_MEMORY_MAP">
+    <Key>
+      <PropertyRef Name="DESCR" />
+    </Key>
+    <Property Name="DESCR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TYPE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NO_OF_WORDS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="OFFSET" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PROCESS">
+    <Key>
+      <PropertyRef Name="PROCESS_ID" />
+    </Key>
+    <Property Name="PROCESS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROCESS_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PROCESS_SEQ" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PLC_MASTER" Relationship="Self.FK_PLC_MASTER_PROCESS" FromRole="PROCESS" ToRole="PLC_MASTER" />
+    <NavigationProperty Name="RESULTs" Relationship="Self.FK_RESULT_PROCESS" FromRole="PROCESS" ToRole="RESULT" />
+  </EntityType>
+  <EntityType Name="RESULT">
+    <Key>
+      <PropertyRef Name="TRAN_ID" />
+    </Key>
+    <Property Name="TRAN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CODE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MODEL_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PROCESS_ID" Type="Int32" Nullable="false" />
+    <Property Name="JUDGE_RESULT" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="JUDGE_WHEN" Type="DateTime" Precision="3" />
+    <Property Name="SHOT_NO" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PROCESS_CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="PLC_ID" Type="Int32" />
+    <NavigationProperty Name="PROCESS" Relationship="Self.FK_RESULT_PROCESS" FromRole="RESULT" ToRole="PROCESS" />
+  </EntityType>
+  <EntityType Name="V_RESULT_HISTORY">
+    <Key>
+      <PropertyRef Name="Code_No" />
+      <PropertyRef Name="Type" />
+      <PropertyRef Name="Injection_Shot_No" />
+    </Key>
+    <Property Name="Code_No" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Injection_Shot_No" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Injection_Result" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Injection_When" Type="DateTime" Precision="3" />
+    <Property Name="Tear_Cut_Shot_No" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Tear_Cut_Result" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Tear_Cut_When" Type="DateTime" Precision="3" />
+    <Property Name="Vibration_Shot_No" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Vibration_Result" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Vibration_When" Type="DateTime" Precision="3" />
+    <Property Name="Assy_Shot_No" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Assy_Result" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Assy_When" Type="DateTime" Precision="3" />
+    <Property Name="Part_No" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_PLC_MASTER_PROCESS">
+    <End Role="PROCESS" Type="Self.PROCESS" Multiplicity="1" />
+    <End Role="PLC_MASTER" Type="Self.PLC_MASTER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROCESS">
+        <PropertyRef Name="PROCESS_ID" />
+      </Principal>
+      <Dependent Role="PLC_MASTER">
+        <PropertyRef Name="PROCESS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RESULT_PROCESS">
+    <End Role="PROCESS" Type="Self.PROCESS" Multiplicity="1" />
+    <End Role="RESULT" Type="Self.RESULT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROCESS">
+        <PropertyRef Name="PROCESS_ID" />
+      </Principal>
+      <Dependent Role="RESULT">
+        <PropertyRef Name="PROCESS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="fct_gmi700_pbsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PLC_MASTER" EntityType="Self.PLC_MASTER" />
+    <EntitySet Name="PLC_MEMORY_MAP" EntityType="Self.PLC_MEMORY_MAP" />
+    <EntitySet Name="PROCESSes" EntityType="Self.PROCESS" />
+    <EntitySet Name="RESULTs" EntityType="Self.RESULT" />
+    <EntitySet Name="V_RESULT_HISTORY" EntityType="Self.V_RESULT_HISTORY" />
+    <AssociationSet Name="FK_PLC_MASTER_PROCESS" Association="Self.FK_PLC_MASTER_PROCESS">
+      <End Role="PROCESS" EntitySet="PROCESSes" />
+      <End Role="PLC_MASTER" EntitySet="PLC_MASTER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RESULT_PROCESS" Association="Self.FK_RESULT_PROCESS">
+      <End Role="PROCESS" EntitySet="PROCESSes" />
+      <End Role="RESULT" EntitySet="RESULTs" />
+    </AssociationSet>
+    <EntitySet Name="PART_NO_MAPPING" EntityType="fct_gmi700_pbsModel.PART_NO_MAPPING" />
+  </EntityContainer>
+  <EntityType Name="PART_NO_MAPPING">
+    <Key>
+      <PropertyRef Name="CODE_NO" />
+      <PropertyRef Name="MODEL_TYPE" />
+    </Key>
+    <Property Name="CODE_NO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MODEL_TYPE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PART_NO" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

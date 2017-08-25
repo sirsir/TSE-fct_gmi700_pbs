@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fct_gmi700_pbsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PART_NO_MAPPING">
+    <Key>
+      <PropertyRef Name="CODE_NO" />
+      <PropertyRef Name="MODEL_TYPE" />
+    </Key>
+    <Property Name="CODE_NO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MODEL_TYPE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PART_NO" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PLC_MASTER">
+    <Key>
+      <PropertyRef Name="PLC_ID" />
+    </Key>
+    <Property Name="PLC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PLC_DESCR" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PROCESS_ID" Type="int" Nullable="false" />
+    <Property Name="PLC_NET" Type="int" Nullable="false" />
+    <Property Name="PLC_NODE" Type="int" Nullable="false" />
+    <Property Name="PLC_UNIT" Type="int" Nullable="false" />
+    <Property Name="PC_WRITE_ADDRESS" Type="int" Nullable="false" />
+    <Property Name="PLC_WRITE_ADDRESS" Type="int" Nullable="false" />
+    <Property Name="INCOMING_FLAG" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PLC_MEMORY_MAP">
+    <Key>
+      <PropertyRef Name="DESCR" />
+    </Key>
+    <Property Name="DESCR" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="TYPE" Type="varchar" MaxLength="255" />
+    <Property Name="NO_OF_WORDS" Type="varchar" MaxLength="255" />
+    <Property Name="OFFSET" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="PROCESS">
+    <Key>
+      <PropertyRef Name="PROCESS_ID" />
+    </Key>
+    <Property Name="PROCESS_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PROCESS_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PROCESS_SEQ" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RESULT">
+    <Key>
+      <PropertyRef Name="TRAN_ID" />
+    </Key>
+    <Property Name="TRAN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CODE_NO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MODEL_TYPE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PROCESS_ID" Type="int" Nullable="false" />
+    <Property Name="JUDGE_RESULT" Type="char" MaxLength="2" />
+    <Property Name="JUDGE_WHEN" Type="datetime" />
+    <Property Name="SHOT_NO" Type="varchar" MaxLength="5" />
+    <Property Name="PROCESS_CODE" Type="varchar" MaxLength="5" />
+    <Property Name="PLC_ID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fct_gmi700_pbs.dbo.V_RESULT_HISTORY' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="V_RESULT_HISTORY">
+    <Key>
+      <PropertyRef Name="Code No" />
+      <PropertyRef Name="Type" />
+      <PropertyRef Name="Injection|Shot No" />
+    </Key>
+    <Property Name="Code No" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Part No" Type="varchar" MaxLength="10" />
+    <Property Name="Injection|Shot No" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Injection|Result" Type="char" MaxLength="2" />
+    <Property Name="Injection|When" Type="datetime" />
+    <Property Name="Tear Cut|Shot No" Type="varchar" MaxLength="5" />
+    <Property Name="Tear Cut|Result" Type="char" MaxLength="2" />
+    <Property Name="Tear Cut|When" Type="datetime" />
+    <Property Name="Vibration|Shot No" Type="varchar" MaxLength="5" />
+    <Property Name="Vibration|Result" Type="char" MaxLength="2" />
+    <Property Name="Vibration|When" Type="datetime" />
+    <Property Name="Assy|Shot No" Type="varchar" MaxLength="5" />
+    <Property Name="Assy|Result" Type="char" MaxLength="2" />
+    <Property Name="Assy|When" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_PLC_MASTER_PROCESS">
+    <End Role="PROCESS" Type="Self.PROCESS" Multiplicity="1" />
+    <End Role="PLC_MASTER" Type="Self.PLC_MASTER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROCESS">
+        <PropertyRef Name="PROCESS_ID" />
+      </Principal>
+      <Dependent Role="PLC_MASTER">
+        <PropertyRef Name="PROCESS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RESULT_PROCESS">
+    <End Role="PROCESS" Type="Self.PROCESS" Multiplicity="1" />
+    <End Role="RESULT" Type="Self.RESULT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROCESS">
+        <PropertyRef Name="PROCESS_ID" />
+      </Principal>
+      <Dependent Role="RESULT">
+        <PropertyRef Name="PROCESS_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="fct_gmi700_pbsModelStoreContainer">
+    <EntitySet Name="PART_NO_MAPPING" EntityType="Self.PART_NO_MAPPING" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PLC_MASTER" EntityType="Self.PLC_MASTER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PLC_MEMORY_MAP" EntityType="Self.PLC_MEMORY_MAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROCESS" EntityType="Self.PROCESS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESULT" EntityType="Self.RESULT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="V_RESULT_HISTORY" EntityType="Self.V_RESULT_HISTORY" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_RESULT_HISTORY].[Code No] AS [Code No], 
+    [V_RESULT_HISTORY].[Type] AS [Type], 
+    [V_RESULT_HISTORY].[Part No] AS [Part No], 
+    [V_RESULT_HISTORY].[Injection|Shot No] AS [Injection|Shot No], 
+    [V_RESULT_HISTORY].[Injection|Result] AS [Injection|Result], 
+    [V_RESULT_HISTORY].[Injection|When] AS [Injection|When], 
+    [V_RESULT_HISTORY].[Tear Cut|Shot No] AS [Tear Cut|Shot No], 
+    [V_RESULT_HISTORY].[Tear Cut|Result] AS [Tear Cut|Result], 
+    [V_RESULT_HISTORY].[Tear Cut|When] AS [Tear Cut|When], 
+    [V_RESULT_HISTORY].[Vibration|Shot No] AS [Vibration|Shot No], 
+    [V_RESULT_HISTORY].[Vibration|Result] AS [Vibration|Result], 
+    [V_RESULT_HISTORY].[Vibration|When] AS [Vibration|When], 
+    [V_RESULT_HISTORY].[Assy|Shot No] AS [Assy|Shot No], 
+    [V_RESULT_HISTORY].[Assy|Result] AS [Assy|Result], 
+    [V_RESULT_HISTORY].[Assy|When] AS [Assy|When]
+    FROM [dbo].[V_RESULT_HISTORY] AS [V_RESULT_HISTORY]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_PLC_MASTER_PROCESS" Association="Self.FK_PLC_MASTER_PROCESS">
+      <End Role="PROCESS" EntitySet="PROCESS" />
+      <End Role="PLC_MASTER" EntitySet="PLC_MASTER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RESULT_PROCESS" Association="Self.FK_RESULT_PROCESS">
+      <End Role="PROCESS" EntitySet="PROCESS" />
+      <End Role="RESULT" EntitySet="RESULT" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

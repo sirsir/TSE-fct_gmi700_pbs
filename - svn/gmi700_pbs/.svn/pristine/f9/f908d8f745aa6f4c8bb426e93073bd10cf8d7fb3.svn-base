@@ -1,0 +1,116 @@
+﻿Public Class clsStateProcessing
+
+    Inherits clsStateBase
+
+    Private m_objMachineData As clsMachineData
+
+    Public Sub New(ByRef plcLineThread As clsPlcCommunication)
+        MyBase.New(plcLineThread)
+        m_objMachineData = New clsMachineData(plcLineThread.PLCSetting, m_clsLogger)
+    End Sub
+
+    Public Overrides Sub Initial(Optional inObj As Object = Nothing)
+        'TODO: Implement
+    End Sub
+
+    Public Overrides Sub Process()
+        'TODO: Implement
+        If Not m_blnWorkDone Then
+            Me.ReplyToPlc(1)
+            Me.m_blnWorkDone = True
+        Else
+            Dim intReadPlcStatus As Integer = Me.ReadPlcDataAndWriteToFile
+            Select Case intReadPlcStatus
+                Case PLC_READ_STATUS_READ_FAILED
+                    'DO NOTIHNG
+                Case PLC_READ_STATUS_COMPLETE
+                    m_clsLogger.AppendLog(Me.GetType.Name, "Process", "Read PLC Status : Complete, Go to complete state", "Info")
+                    m_objPlcLineThread.SetState(Me.m_objPlcLineThread.m_clsStateComplete)
+                    m_objPlcLineThread.ForceToProcessCurrentState()
+                Case PLC_READ_STATUS_ERROR
+                    'DO NOTHING
+                Case Else
+                    'PLC_READ_STATUS_INVALID_QR, PLC_READ_STATUS_DUPLICATE_SERIAL
+                    m_clsLogger.AppendLog(Me.GetType.Name, "Process", "Read PLC Status : Error, Go to error state:intReadPlcStatus=" & intReadPlcStatus, "Info")
+                    m_objPlcLineThread.SetState(Me.m_objPlcLineThread.m_clsStateError)
+                    m_objPlcLineThread.ForceToProcessCurrentState()
+            End Select
+        End If
+    End Sub
+
+   
+    
+    Private Function ReadPlcDataAndWriteToFile() As Integer
+        Try
+
+            m_clsLogger.AppendLog(Me.GetType.Name, "ReadPlcDataAndWriteToFile", "function start", "Info")
+            Dim memoryMap As PLC_MEMORY_MAP
+            
+
+            'Using dbEntities As fct_gmi700_pbsEntities = New fct_gmi700_pbsEntities()
+
+            '    memoryMap = (From mem In dbEntities.PLC_MEMORY_MAP
+            '                                Where mem.DESCR = "QR Code").First
+            'End Using
+            memoryMap = (From mem In m_objPlcLineThread.m_memoryMap
+                                            Where mem.DESCR = "QR Code").First
+
+            Dim addressTemp As Integer = CInt(memoryMap.OFFSET) + m_objPlcLineThread.m_objDbMan.PLC_GetAddress(m_objPLCSetting.PLC_ID)
+
+            Dim strData1 As String = m_objPlc.ReadMemoryString(PLC_MEMORY_TYPE _
+                                       , addressTemp _
+                                        , memoryMap.NO_OF_WORDS)
+
+            Dim bytData1() As Byte = System.Text.Encoding.ASCII.GetBytes(strData1)
+            Dim strHex As String = BitConverter.ToString(bytData1)
+
+            m_clsLogger.AppendLog(Me.GetType.Name, "ReadPlcDataAndWriteToFile", "[" & CStr(addressTemp) & "] = " & strData1, "PLC")
+            m_clsLogger.AppendLog(Me.GetType.Name, "ReadPlcDataAndWriteToFile", "hexData1 = " & strHex, "Info")
+
+
+
+            strData1 = strData1.Replace(Convert.ToChar(0).ToString(), "")
+            Dim returnStatus As SaveResultFromQRcode_RETURN_CODE = m_objPlcLineThread.m_objDbMan.SaveResultFromQRcode(strData1, m_objPLCSetting, m_objPlc)
+
+            Select Case returnStatus
+                Case SaveResultFromQRcode_RETURN_CODE.COMPLETE
+
+                    m_blnWorkDone = True
+                    m_clsLogger.AppendLog(Me.GetType.Name, "ReadPlcDataAndWriteToFile", "function end without error", "Info")
+                    Return PLC_READ_STATUS_COMPLETE
+                Case SaveResultFromQRcode_RETURN_CODE.DATABASE_CONNECTION_ERROR
+                    m_blnWorkDone = True
+                    'Me.int_for_ReplyToPlc = PLC_READ_STATUS_INVALID_QR
+                    Return PLC_READ_STATUS_ERROR    'RETRY
+                Case SaveResultFromQRcode_RETURN_CODE.INVALID
+                    m_blnWorkDone = True
+                    Me.int_for_ReplyToPlc = PLC_READ_STATUS_INVALID_QR
+                    Return PLC_READ_STATUS_INVALID_QR
+                Case SaveResultFromQRcode_RETURN_CODE.DATABASE_SAVE_ERROR
+                    m_blnWorkDone = True
+                    Me.int_for_ReplyToPlc = PLC_READ_STATUS_DUPLICATE_SERIAL
+                    Return PLC_READ_STATUS_DUPLICATE_SERIAL
+                Case SaveResultFromQRcode_RETURN_CODE.DUPLICATE
+                    m_blnWorkDone = True
+                    Me.int_for_ReplyToPlc = PLC_READ_STATUS_DUPLICATE_SERIAL
+                    Return PLC_READ_STATUS_DUPLICATE_SERIAL
+
+                Case Else
+                    'm_blnWorkDone = False
+                    'Me.int_for_ReplyToPlc = PLC_READ_STATUS_ERROR
+                    Return PLC_READ_STATUS_ERROR    'RETRY
+
+            End Select
+
+
+
+
+        Catch ex As Exception
+            m_clsLogger.AppendLog(Me.GetType.Name, "ReadPlcDataAndWriteToFile", "function end with error", "Info")
+            m_clsLogger.AppendLog(Me.GetType.Name, "ReadPlcDataAndWriteToFile", ex)
+            Return PLC_READ_STATUS_ERROR    'RETRY
+        End Try
+    End Function
+
+    
+End Class

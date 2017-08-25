@@ -1,0 +1,281 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class frmResultHistory
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.ButtonFilter = New System.Windows.Forms.Button()
+        Me.ButtonRefresh = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Fct_gmi700_pbsDataSet = New gmi700_pbs_client.fct_gmi700_pbsDataSet()
+        Me.VResultHistoryBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.V_Result_HistoryTableAdapter = New gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.V_RESULT_HISTORYTableAdapter()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.ButtonEdit = New System.Windows.Forms.Button()
+        Me.ButtonDelete = New System.Windows.Forms.Button()
+        Me.CtrlPivotGrid1 = New gmi700_pbs_client.ctrlPivotGrid()
+        Me.ButtonExit = New System.Windows.Forms.Button()
+        Me.Panel1.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
+        Me.TableLayoutPanel1.SuspendLayout()
+        CType(Me.Fct_gmi700_pbsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VResultHistoryBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TableLayoutPanel4.SuspendLayout()
+        CType(Me.CtrlPivotGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.YellowGreen
+        Me.Panel1.Controls.Add(Me.TableLayoutPanel2)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1206, 29)
+        Me.Panel1.TabIndex = 0
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.AutoSize = True
+        Me.TableLayoutPanel2.ColumnCount = 9
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.88262!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.983655!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.Label6, 0, 0)
+        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 1
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(1206, 29)
+        Me.TableLayoutPanel2.TabIndex = 0
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(3, 8)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(142, 13)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "GMI700 - Result History"
+        '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.ColumnCount = 6
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.33333!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.33333!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.33333!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.33333!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.33333!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonFilter, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonRefresh, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonEdit, 2, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonDelete, 3, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.ButtonExit, 4, 0)
+        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 29)
+        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 1
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1206, 32)
+        Me.TableLayoutPanel1.TabIndex = 1
+        '
+        'ButtonFilter
+        '
+        Me.ButtonFilter.AutoSize = True
+        Me.ButtonFilter.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ButtonFilter.Location = New System.Drawing.Point(0, 0)
+        Me.ButtonFilter.Margin = New System.Windows.Forms.Padding(0)
+        Me.ButtonFilter.Name = "ButtonFilter"
+        Me.ButtonFilter.Size = New System.Drawing.Size(160, 32)
+        Me.ButtonFilter.TabIndex = 1
+        Me.ButtonFilter.Text = "Filter"
+        Me.ButtonFilter.UseVisualStyleBackColor = True
+        '
+        'ButtonRefresh
+        '
+        Me.ButtonRefresh.AutoSize = True
+        Me.ButtonRefresh.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ButtonRefresh.Location = New System.Drawing.Point(160, 0)
+        Me.ButtonRefresh.Margin = New System.Windows.Forms.Padding(0)
+        Me.ButtonRefresh.Name = "ButtonRefresh"
+        Me.ButtonRefresh.Size = New System.Drawing.Size(160, 32)
+        Me.ButtonRefresh.TabIndex = 2
+        Me.ButtonRefresh.Text = "Refresh"
+        Me.ButtonRefresh.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel3
+        '
+        Me.TableLayoutPanel3.ColumnCount = 10
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 61)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 2
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(1206, 64)
+        Me.TableLayoutPanel3.TabIndex = 2
+        '
+        'Fct_gmi700_pbsDataSet
+        '
+        Me.Fct_gmi700_pbsDataSet.DataSetName = "fct_gmi700_pbsDataSet"
+        Me.Fct_gmi700_pbsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'VResultHistoryBindingSource
+        '
+        Me.VResultHistoryBindingSource.DataMember = "v_Result_History"
+        Me.VResultHistoryBindingSource.DataSource = Me.Fct_gmi700_pbsDataSet
+        '
+        'V_Result_HistoryTableAdapter
+        '
+        Me.V_Result_HistoryTableAdapter.ClearBeforeFill = True
+        '
+        'TableLayoutPanel4
+        '
+        Me.TableLayoutPanel4.ColumnCount = 3
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.545455!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.90909!))
+        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.545455!))
+        Me.TableLayoutPanel4.Controls.Add(Me.CtrlPivotGrid1, 1, 1)
+        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 125)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        Me.TableLayoutPanel4.RowCount = 3
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.545455!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.90909!))
+        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.545455!))
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(1206, 346)
+        Me.TableLayoutPanel4.TabIndex = 4
+        '
+        'ButtonEdit
+        '
+        Me.ButtonEdit.AutoSize = True
+        Me.ButtonEdit.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ButtonEdit.Location = New System.Drawing.Point(320, 0)
+        Me.ButtonEdit.Margin = New System.Windows.Forms.Padding(0)
+        Me.ButtonEdit.Name = "ButtonEdit"
+        Me.ButtonEdit.Size = New System.Drawing.Size(160, 32)
+        Me.ButtonEdit.TabIndex = 3
+        Me.ButtonEdit.Text = "Edit"
+        Me.ButtonEdit.UseVisualStyleBackColor = True
+        '
+        'ButtonDelete
+        '
+        Me.ButtonDelete.AutoSize = True
+        Me.ButtonDelete.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ButtonDelete.Location = New System.Drawing.Point(480, 0)
+        Me.ButtonDelete.Margin = New System.Windows.Forms.Padding(0)
+        Me.ButtonDelete.Name = "ButtonDelete"
+        Me.ButtonDelete.Size = New System.Drawing.Size(160, 32)
+        Me.ButtonDelete.TabIndex = 4
+        Me.ButtonDelete.Text = "Delete"
+        Me.ButtonDelete.UseVisualStyleBackColor = True
+        '
+        'CtrlPivotGrid1
+        '
+        Me.CtrlPivotGrid1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.CtrlPivotGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.CtrlPivotGrid1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CtrlPivotGrid1.GroupedDuplicateCells = False
+        Me.CtrlPivotGrid1.HideDuplicateColumns = 0
+        Me.CtrlPivotGrid1.Location = New System.Drawing.Point(57, 18)
+        Me.CtrlPivotGrid1.Name = "CtrlPivotGrid1"
+        Me.CtrlPivotGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
+        Me.CtrlPivotGrid1.Size = New System.Drawing.Size(1090, 308)
+        Me.CtrlPivotGrid1.TabIndex = 0
+        '
+        'ButtonExit
+        '
+        Me.ButtonExit.AutoSize = True
+        Me.ButtonExit.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ButtonExit.Location = New System.Drawing.Point(640, 0)
+        Me.ButtonExit.Margin = New System.Windows.Forms.Padding(0)
+        Me.ButtonExit.Name = "ButtonExit"
+        Me.ButtonExit.Size = New System.Drawing.Size(160, 32)
+        Me.ButtonExit.TabIndex = 5
+        Me.ButtonExit.Text = "Exit"
+        Me.ButtonExit.UseVisualStyleBackColor = True
+        '
+        'frmResultHistory
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(1206, 471)
+        Me.Controls.Add(Me.TableLayoutPanel4)
+        Me.Controls.Add(Me.TableLayoutPanel3)
+        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.Panel1)
+        Me.Name = "frmResultHistory"
+        Me.Text = "frmResultHistory"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel2.PerformLayout()
+        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TableLayoutPanel1.PerformLayout()
+        CType(Me.Fct_gmi700_pbsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VResultHistoryBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TableLayoutPanel4.ResumeLayout(False)
+        CType(Me.CtrlPivotGrid1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
+    End Sub
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents TableLayoutPanel2 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents TableLayoutPanel3 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents Fct_gmi700_pbsDataSet As gmi700_pbs_client.fct_gmi700_pbsDataSet
+    Friend WithEvents VResultHistoryBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents V_Result_HistoryTableAdapter As gmi700_pbs_client.fct_gmi700_pbsDataSetTableAdapters.v_Result_HistoryTableAdapter
+    Friend WithEvents TableLayoutPanel4 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents CtrlPivotGrid1 As gmi700_pbs_client.ctrlPivotGrid
+    Friend WithEvents ButtonFilter As System.Windows.Forms.Button
+    Friend WithEvents ButtonRefresh As System.Windows.Forms.Button
+    Friend WithEvents ButtonEdit As System.Windows.Forms.Button
+    Friend WithEvents ButtonDelete As System.Windows.Forms.Button
+    Friend WithEvents ButtonExit As System.Windows.Forms.Button
+End Class

@@ -1,0 +1,25 @@
+1. Injection Out
+1.1 Already has record => Return 3
+
+
+2. Vibration In
+2.1 No previous process result => Return 4
+2.2 Previous result is NOT OK => Return 4
+
+3. Vibration Out
+3.1 Already has record => Return 3
+3.2 No record (No barcode scaned at In) => Return 4
+3.3 Record already has Result => Return 4
+
+4. Assy In
+4.1 No previous process result => Return 4
+4.2 Previous result is NOT OK => Return 4
+
+
+5. Assy Out
+5.1 Already has record => Return 3
+5.2 No record (No barcode scaned at In) => Return 4
+5.3 Record already has Result => Return 4
+
+
+

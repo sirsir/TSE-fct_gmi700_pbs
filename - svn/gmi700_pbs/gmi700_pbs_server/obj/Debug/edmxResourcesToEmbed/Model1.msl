@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="fct_gmi700_pbsModelStoreContainer" CdmEntityContainer="fct_gmi700_pbsEntities">
+    <EntitySetMapping Name="PLC_MASTER">
+      <EntityTypeMapping TypeName="fct_gmi700_pbsModel.PLC_MASTER">
+        <MappingFragment StoreEntitySet="PLC_MASTER">
+          <ScalarProperty Name="PLC_ID" ColumnName="PLC_ID" />
+          <ScalarProperty Name="PLC_DESCR" ColumnName="PLC_DESCR" />
+          <ScalarProperty Name="PROCESS_ID" ColumnName="PROCESS_ID" />
+          <ScalarProperty Name="PLC_NET" ColumnName="PLC_NET" />
+          <ScalarProperty Name="PLC_NODE" ColumnName="PLC_NODE" />
+          <ScalarProperty Name="PLC_UNIT" ColumnName="PLC_UNIT" />
+          <ScalarProperty Name="PC_WRITE_ADDRESS" ColumnName="PC_WRITE_ADDRESS" />
+          <ScalarProperty Name="PLC_WRITE_ADDRESS" ColumnName="PLC_WRITE_ADDRESS" />
+          <ScalarProperty Name="INCOMING_FLAG" ColumnName="INCOMING_FLAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PLC_MEMORY_MAP">
+      <EntityTypeMapping TypeName="fct_gmi700_pbsModel.PLC_MEMORY_MAP">
+        <MappingFragment StoreEntitySet="PLC_MEMORY_MAP">
+          <ScalarProperty Name="DESCR" ColumnName="DESCR" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="NO_OF_WORDS" ColumnName="NO_OF_WORDS" />
+          <ScalarProperty Name="OFFSET" ColumnName="OFFSET" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROCESSes">
+      <EntityTypeMapping TypeName="fct_gmi700_pbsModel.PROCESS">
+        <MappingFragment StoreEntitySet="PROCESS">
+          <ScalarProperty Name="PROCESS_ID" ColumnName="PROCESS_ID" />
+          <ScalarProperty Name="PROCESS_NAME" ColumnName="PROCESS_NAME" />
+          <ScalarProperty Name="PROCESS_SEQ" ColumnName="PROCESS_SEQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESULTs">
+      <EntityTypeMapping TypeName="fct_gmi700_pbsModel.RESULT">
+        <MappingFragment StoreEntitySet="RESULT">
+          <ScalarProperty Name="TRAN_ID" ColumnName="TRAN_ID" />
+          <ScalarProperty Name="CODE_NO" ColumnName="CODE_NO" />
+          <ScalarProperty Name="MODEL_TYPE" ColumnName="MODEL_TYPE" />
+          <ScalarProperty Name="PROCESS_ID" ColumnName="PROCESS_ID" />
+          <ScalarProperty Name="JUDGE_RESULT" ColumnName="JUDGE_RESULT" />
+          <ScalarProperty Name="JUDGE_WHEN" ColumnName="JUDGE_WHEN" />
+          <ScalarProperty Name="SHOT_NO" ColumnName="SHOT_NO" />
+          <ScalarProperty Name="PROCESS_CODE" ColumnName="PROCESS_CODE" />
+          <ScalarProperty Name="PLC_ID" ColumnName="PLC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_RESULT_HISTORY">
+      <EntityTypeMapping TypeName="fct_gmi700_pbsModel.V_RESULT_HISTORY">
+        <MappingFragment StoreEntitySet="V_RESULT_HISTORY">
+          <ScalarProperty Name="Part_No" ColumnName="Part No" />
+          <ScalarProperty Name="Code_No" ColumnName="Code No" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Injection_Shot_No" ColumnName="Injection|Shot No" />
+          <ScalarProperty Name="Injection_Result" ColumnName="Injection|Result" />
+          <ScalarProperty Name="Injection_When" ColumnName="Injection|When" />
+          <ScalarProperty Name="Tear_Cut_Shot_No" ColumnName="Tear Cut|Shot No" />
+          <ScalarProperty Name="Tear_Cut_Result" ColumnName="Tear Cut|Result" />
+          <ScalarProperty Name="Tear_Cut_When" ColumnName="Tear Cut|When" />
+          <ScalarProperty Name="Vibration_Shot_No" ColumnName="Vibration|Shot No" />
+          <ScalarProperty Name="Vibration_Result" ColumnName="Vibration|Result" />
+          <ScalarProperty Name="Vibration_When" ColumnName="Vibration|When" />
+          <ScalarProperty Name="Assy_Shot_No" ColumnName="Assy|Shot No" />
+          <ScalarProperty Name="Assy_Result" ColumnName="Assy|Result" />
+          <ScalarProperty Name="Assy_When" ColumnName="Assy|When" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PART_NO_MAPPING">
+      <EntityTypeMapping TypeName="fct_gmi700_pbsModel.PART_NO_MAPPING">
+        <MappingFragment StoreEntitySet="PART_NO_MAPPING">
+          <ScalarProperty Name="PART_NO" ColumnName="PART_NO" />
+          <ScalarProperty Name="MODEL_TYPE" ColumnName="MODEL_TYPE" />
+          <ScalarProperty Name="CODE_NO" ColumnName="CODE_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

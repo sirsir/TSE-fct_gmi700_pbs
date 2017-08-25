@@ -1,0 +1,163 @@
+﻿Public Class frmResultHistory
+
+    Public da1 As fct_gmi700_pbsDataSetTableAdapters.v_Result_HistoryTableAdapter = New fct_gmi700_pbsDataSetTableAdapters.v_Result_HistoryTableAdapter()
+
+    Public dv As DataView
+    Public dt1 As fct_gmi700_pbsDataSet.v_Result_HistoryDataTable = New fct_gmi700_pbsDataSet.v_Result_HistoryDataTable
+
+    Private Sub frmResultHistory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'Fct_gmi700_pbsDataSet.V_RESULT_HISTORY' table. You can move, or remove it, as needed.
+        Me.V_RESULT_HISTORYTableAdapter.Fill(Me.Fct_gmi700_pbsDataSet.V_RESULT_HISTORY)
+
+    End Sub
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        AddControls()
+        SetupDataObj()
+        SetControls()
+    End Sub
+
+
+    Private Sub AddControls()
+        'Dim textbox1 As New TextBox
+        'textbox1.Name = "Textbox1"
+        'textbox1.Size = New Size(170, 20)
+        'textbox1.Location = New Point(167, 32)
+        'Me.TableLayoutPanel3.Controls.Add(textbox1, 0, 0)
+
+        'Me.TableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset
+        Me.TableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Outset
+        'Me.TableLayoutPanel3.CellBorderStyle = TableLayoutPanelCellBorderStyle.Inset
+
+        AddLabelTextbox_to_Table(Me.TableLayoutPanel3, "Code No:", "CodeNo", 0, 0)
+        AddLabelTextbox_to_Table(Me.TableLayoutPanel3, "Model Type:", "ModelType", 2, 0)
+        AddLabelTextbox_to_Table(Me.TableLayoutPanel3, "Result:", "Result", 4, 0)
+        AddLabelTextbox_to_Table(Me.TableLayoutPanel3, "Process Filter:", "ProcessFilter", 0, 1)
+        AddLabelTextbox_to_Table(Me.TableLayoutPanel3, "Date From:", "DateFrom", 2, 1)
+        AddLabelTextbox_to_Table(Me.TableLayoutPanel3, "Date To:", "DateTo", 4, 1)
+
+    End Sub
+
+
+    Private Sub AddLabelTextbox_to_Table(tbl1 As TableLayoutPanel, strLable As String, strName As String, intRow As Integer, intCol As Integer)
+        tbl1.Controls.Add(New Label() With {.Text = strLable, .Anchor = AnchorStyles.Right, .AutoSize = True}, intRow, intCol)
+        'tbl1.Controls.Add(New ComboBox() With {.Name = strName, .Dock = DockStyle.Fill}, intRow + 1, intCol)
+        tbl1.Controls.Add(New TextBox() With {.Name = strName, .Dock = DockStyle.Fill}, intRow + 1, intCol)
+    End Sub
+
+    Private Sub SetupDataObj()
+
+        'dt1 = New fct_gmi700_pbsDataSet.V_RESULT_HISTORYDataTable()
+        da1.Fill(dt1)
+        'fct_gmi700_pbsDataSetTableAdapters.V_RESULT_HISTORYTableAdapter()
+        'fct_gmi700_pbsDataSetTableAdapters.V_RESULT_HISTORYTableAdapter.
+
+        'dv = New DataView(ds.Tables(0), "type = 'business' ", "type Desc", DataViewRowState.CurrentRows)
+
+        dv = New DataView(dt1)
+
+        CtrlPivotGrid1.DataSource = dv
+    End Sub
+
+    Private Sub SetControls()
+        'GetHeaderGroupings(DataGridView1)
+    End Sub
+
+    
+    Private Sub dataFilter()
+        'dv.RowFilter = "[Code No]='14000002'"
+
+        Dim strFilter = ""
+
+        If Me.TableLayoutPanel3.Controls("CodeNo").Text <> String.Empty Then
+            strFilter = String.Format("[Code No]LIKE'{0}'", Me.TableLayoutPanel3.Controls("CodeNo").Text)
+            'dv.RowFilter = String.Format("[Code No]LIKE'{0}' AND [Type]='RH'", Me.TableLayoutPanel3.Controls("CodeNo").Text)
+
+        End If
+
+        If Me.TableLayoutPanel3.Controls("ModelType").Text <> String.Empty Then
+
+            If strFilter = String.Empty Then
+                strFilter = String.Format("[Type]LIKE'{0}'", Me.TableLayoutPanel3.Controls("ModelType").Text)
+
+            Else
+                strFilter = String.Format("{1} AND [Type]LIKE'{0}'", Me.TableLayoutPanel3.Controls("ModelType").Text, strFilter)
+            End If
+
+
+        End If
+
+        If Me.TableLayoutPanel3.Controls("Result").Text <> String.Empty Then
+
+            If strFilter = String.Empty Then
+                strFilter = String.Format("([Injection|Result]LIKE'{0}' OR [Tear Cut|Result]LIKE'{0}' OR [Vibration|Result]LIKE'{0}' OR [Assy|Result]LIKE'{0}')", Me.TableLayoutPanel3.Controls("Result").Text)
+
+            Else
+                strFilter = String.Format("{1} AND ([Injection|Result]LIKE'{0}' OR [Tear Cut|Result]LIKE'{0}' OR [Vibration|Result]LIKE'{0}' OR [Assy|Result]LIKE'{0}')", Me.TableLayoutPanel3.Controls("Result").Text, strFilter)
+            End If
+
+
+        End If
+
+
+        If Me.TableLayoutPanel3.Controls("DateFrom").Text <> String.Empty Then
+
+            If strFilter = String.Empty Then
+                strFilter = String.Format("([Injection|When]>='{0}' OR [Tear Cut|When]>='{0}' OR [Vibration|When]>='{0}' OR [Assy|When]>='{0}')", Me.TableLayoutPanel3.Controls("DateFrom").Text)
+
+            Else
+                strFilter = String.Format("{1} AND ([Injection|When]>='{0}' OR [Tear Cut|When]>='{0}' OR [Vibration|When]>='{0}' OR [Assy|When]>='{0}')", Me.TableLayoutPanel3.Controls("DateFrom").Text, strFilter)
+            End If
+
+
+        End If
+
+        If Me.TableLayoutPanel3.Controls("DateTo").Text <> String.Empty Then
+
+            If strFilter = String.Empty Then
+                strFilter = String.Format("([Injection|When]<='{0}' OR [Tear Cut|When]<='{0}' OR [Vibration|When]<='{0}' OR [Assy|When]<='{0}')", Me.TableLayoutPanel3.Controls("DateTo").Text)
+
+            Else
+                strFilter = String.Format("{1} AND ([Injection|When]<='{0}' OR [Tear Cut|When]<='{0}' OR [Vibration|When]<='{0}' OR [Assy|When]<='{0}')", Me.TableLayoutPanel3.Controls("DateTo").Text, strFilter)
+            End If
+
+
+        End If
+
+
+
+        'MsgBox(dv.Table.Columns.Item(0).ToString)
+        'dv.RowFilter = "Type='RH'"
+
+        dv.RowFilter = strFilter
+    End Sub
+
+    
+
+    
+
+
+
+    Private Sub ButtonFilter_Click(sender As Object, e As EventArgs) Handles ButtonFilter.Click
+        dataFilter()
+    End Sub
+
+    Private Sub dataRefresh()
+        CtrlPivotGrid1.DataSource = Nothing
+
+        dt1.Clear()
+        da1.Fill(dt1)
+        dv = New DataView(dt1)
+
+        CtrlPivotGrid1.DataSource = dv
+
+        'dv.RowFilter = [String].Empty
+    End Sub
+
+    
+End Class
